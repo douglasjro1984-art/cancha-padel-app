@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Turno de Pádel</title>
+    <link rel="stylesheet" href="../static/css/estilos.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Inicio</a> | 
+            <a href="reservas.html">Reservar Cancha</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenedor-formulario">
+            <h2>Solicitar Turno de Pádel</h2>
+            
+            <form action="/reservas" method="POST">
+                
+                <div class="campo">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
+                </div>
+
+                <div class="campo">
+                    <label for="cancha">Seleccionar Cancha:</label>
+                    <select id="cancha" name="cancha" required>
+                        <option value="">-- Seleccione una opción --</option>
+                        <option value="1">Cancha 1 (Blindex - Techada)</option>
+                        <option value="2">Cancha 2 (Blindex - Descubierta)</option>
+                        <option value="3">Cancha 3 (Cemento)</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+
+                <div class="campo">
+                    <label for="hora">Horario disponible:</label>
+                    <select id="hora" name="hora" required>
+                        <option value="">-- Seleccione la hora --</option>
+                        <option value="14:00">14:00 hs</option>
+                        <option value="15:30">15:30 hs</option>
+                        <option value="17:00">17:00 hs</option>
+                        <option value="18:30">18:30 hs</option>
+                        <option value="20:00">20:00 hs</option>
+                        <option value="21:30">21:30 hs</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-enviar">Confirmar Reserva</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Sistema de Turnos de Pádel (Equipo Scrum)</p>
+    </footer>
+
+</body>
+</html>
