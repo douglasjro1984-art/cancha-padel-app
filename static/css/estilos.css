@@ -1,0 +1,122 @@
+/* Estilos Generales y Fondo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121824; /* Azul oscuro de tono deportivo */
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenedor del Formulario */
+.container {
+    background-color: #1a2333; /* Resalta sobre el fondo general */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 450px;
+    border-top: 5px solid #ccff00; /* Línea verde flúor en el borde superior */
+}
+
+/* Títulos y Subtítulos */
+h2 {
+    text-align: center;
+    color: #ffffff;
+    margin: 0 0 5px 0;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+p.subtitle {
+    text-align: center;
+    color: #8fa0bc;
+    font-size: 14px;
+    margin: 0 0 25px 0;
+}
+
+/* Agrupación de Campos */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #8fa0bc;
+    font-weight: 600;
+}
+
+/* Inputs, Selects y Elementos de Texto */
+input[type="text"],
+input[type="date"],
+input[type="time"],
+select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #2c3a54;
+    background-color: #121824;
+    color: #ffffff;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de foco al hacer clic en los campos */
+input:focus, select:focus {
+    outline: none;
+    border-color: #ccff00; /* Cambia a verde flúor */
+    box-shadow: 0 0 8px rgba(204, 255, 0, 0.2);
+}
+
+/* Botón de Enviar Formulario */
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: #ccff00; /* Color lima/pelota de pádel */
+    color: #121824; /* Texto oscuro para máxima legibilidad */
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+/* Efectos interactivos del botón */
+.btn-submit:hover {
+    background-color: #b3e600; /* Tono ligeramente más oscuro al pasar el mouse */
+}
+
+.btn-submit:active {
+    transform: scale(0.98); /* Efecto de click/presionado */
+}
+/* Estilos para los Avisos Integrados */
+.alert {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Alerta de Éxito (Verde Pelota de Pádel Suave) */
+.alert-success {
+    background-color: rgba(204, 255, 0, 0.15);
+    color: #ccff00;
+    border: 1px solid #ccff00;
+}
+
+/* Alerta de Error (Rojo Deportivo) */
+.alert-error {
+    background-color: rgba(255, 75, 75, 0.15);
+    color: #ff4b4b;
+    border: 1px solid #ff4b4b;
+}

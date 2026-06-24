@@ -3,65 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solicitar Turno de Pádel</title>
-    <link rel="stylesheet" href="../static/css/estilos.css">
+    <title>Reserva de Canchas - Pádel App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
 </head>
 <body>
 
-    <header>
-        <nav>
-            <a href="index.html">Inicio</a> | 
-            <a href="reservas.html">Reservar Cancha</a>
-        </nav>
-    </header>
+    <div class="container">
+        <h2>Reserva tu Cancha</h2>
+        <p class="subtitle">Gestiona tu turno rápido y fácil</p>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <form action="/reservas" method="POST">
+            <div class="form-group">
+                <label for="nombre">Nombre del Jugador</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+            </div>
 
-    <main>
-        <div class="contenedor-formulario">
-            <h2>Solicitar Turno de Pádel</h2>
-            
-            <form action="/reservas" method="POST">
-                
-                <div class="campo">
-                    <label for="nombre">Nombre Completo:</label>
-                    <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
-                </div>
+            <div class="form-group">
+                <label for="cancha">Seleccionar Cancha</label>
+                <select id="cancha" name="cancha_id" required>
+                    <option value="1">Cancha Cristal 1 (Techada)</option>
+                    <option value="2">Cancha Cristal 2 (Descubierta)</option>
+                    <option value="3">Cancha Premium (Blindex)</option>
+                </select>
+            </div>
 
-                <div class="campo">
-                    <label for="cancha">Seleccionar Cancha:</label>
-                    <select id="cancha" name="cancha" required>
-                        <option value="">-- Seleccione una opción --</option>
-                        <option value="1">Cancha 1 (Blindex - Techada)</option>
-                        <option value="2">Cancha 2 (Blindex - Descubierta)</option>
-                        <option value="3">Cancha 3 (Cemento)</option>
-                    </select>
-                </div>
+            <div class="form-group">
+                <label for="fecha">Fecha del Turno</label>
+                <input type="date" id="fecha" name="fecha" required>
+            </div>
 
-                <div class="campo">
-                    <label for="fecha">Fecha:</label>
-                    <input type="date" id="fecha" name="fecha" required>
-                </div>
+            <div class="form-group">
+                <label for="hora">Horario</label>
+                <input type="time" id="hora" name="hora" required>
+            </div>
 
-                <div class="campo">
-                    <label for="hora">Horario disponible:</label>
-                    <select id="hora" name="hora" required>
-                        <option value="">-- Seleccione la hora --</option>
-                        <option value="14:00">14:00 hs</option>
-                        <option value="15:30">15:30 hs</option>
-                        <option value="17:00">17:00 hs</option>
-                        <option value="18:30">18:30 hs</option>
-                        <option value="20:00">20:00 hs</option>
-                        <option value="21:30">21:30 hs</option>
-                    </select>
-                </div>
+            <button type="submit" class="btn-submit">Confirmar Turno 🎾</button>
+        </form>
+    </div>
 
-                <button type="submit" class="btn-enviar">Confirmar Reserva</button>
-            </form>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 - Sistema de Turnos de Pádel (Equipo Scrum)</p>
-    </footer>
-
+    <script>
+        const hoy = new Date().toISOString().split('T')[0];
+        document.getElementById('fecha').setAttribute('min', hoy);
+    </script>
 </body>
 </html>
