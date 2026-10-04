@@ -1,4 +1,18 @@
-aplicacion-padel-cancha/
+# Cancha de pádel, reserva de turnos y alquiler de indumentaria
+
+Aplicación web para gestionar una cancha de pádel: reserva de turnos y alquiler de indumentaria deportiva.
+
+## Qué hace
+
+- Reserva de turnos de la cancha.
+- Alquiler de indumentaria deportiva.
+
+## Autor
+
+**Douglas Romero**, desarrollador backend junior.
+[GitHub](https://github.com/douglasjro1984-art) · [LinkedIn](https://www.linkedin.com/in/douglas-romero-574576384)aplicacion-
+
+padel-cancha/
 │
 ├── src/                        # Código fuente de la aplicación
 │   ├── __init__.py             # Inicializador del paquete Python
